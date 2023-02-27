@@ -20,3 +20,12 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface Anime {
+  title: string;
+  genre: string;
+  description: string;
+  value: number;
+  profile: { id: number}
+  voter: {id: number}
+}
