@@ -1,0 +1,52 @@
+# flyctl launch added from .gitignore
+# Logs
+**/logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/lerna-debug.log*
+
+**/node_modules
+**/dist
+**/dist-ssr
+**/*.local
+
+# Editor directories and files
+**/.vscode/*
+!**/.vscode/extensions.json
+**/.idea
+**/.DS_Store
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
+
+# flyctl launch added from my-react-ts-app/.gitignore
+# Logs
+my-react-ts-app/**/logs
+my-react-ts-app/**/*.log
+my-react-ts-app/**/npm-debug.log*
+my-react-ts-app/**/yarn-debug.log*
+my-react-ts-app/**/yarn-error.log*
+my-react-ts-app/**/pnpm-debug.log*
+my-react-ts-app/**/lerna-debug.log*
+
+my-react-ts-app/**/node_modules
+my-react-ts-app/**/dist
+my-react-ts-app/**/dist-ssr
+my-react-ts-app/**/*.local
+
+# Editor directories and files
+my-react-ts-app/**/.vscode/*
+!my-react-ts-app/**/.vscode/extensions.json
+my-react-ts-app/**/.idea
+my-react-ts-app/**/.DS_Store
+my-react-ts-app/**/*.suo
+my-react-ts-app/**/*.ntvs*
+my-react-ts-app/**/*.njsproj
+my-react-ts-app/**/*.sln
+my-react-ts-app/**/*.sw?
+fly.toml
