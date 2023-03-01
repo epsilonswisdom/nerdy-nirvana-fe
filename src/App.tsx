@@ -16,18 +16,21 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as profileService from './services/profileService'
+import * as animeService from './services/animeService'
 
 // stylesheets
 import './App.css'
 
 // types
-import { User, Profile } from './types/models'
+import { User, Profile, Anime } from './types/models'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
 
   const [profiles, setProfiles] = useState<Profile[]>([])
   
+  const [animes, setAnimes] = useState<Anime[]>([])
+
   const [user, setUser] = useState<User | null>(authService.getUser())
 
   useEffect((): void => {
@@ -52,6 +55,17 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
+  useEffect((): void => {
+    const fetchAnimes = async (): Promise<void> => {
+      try {
+        const animeData: Anime[] = await animeService.fetchAllAnimes()
+        setAnimes(animeData)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    user ? fetchAnimes() : setAnimes([])
+  }, [user])
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -81,6 +95,7 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        
       </Routes>
     </>
   )
