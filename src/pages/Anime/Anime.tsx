@@ -21,11 +21,13 @@ const Animes = (props: AnimeProps): JSX.Element => {
   if(!animes.length) return <p>List of Anime</p>
 
   return (
-    <main className='animeList'>
-      {/* {animes.map((anime: Anime) =>
-      <AnimeCard key={anime.profile} anime={anime}/>
-      )} */}
-    </main>
+    <>
+    <h1> Hello This is a list of all the Anime</h1>
+    {animes.map((anime: Anime) =>
+    <p key={anime.title}>{anime.genre}</p>
+    )}
+    </>
+
   )
 }
 
