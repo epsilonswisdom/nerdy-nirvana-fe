@@ -25,6 +25,14 @@ const VoteManager = (props: VoteManagerProps): JSX.Element => {
     handleVote({ value: newValue, profileId: profile.id })
   }
   const [hover, setHover] = useState<string | null>(null)
+
+  const handleHover = (evt: React.MouseEvent): void => {
+    if (evt.type === 'mouseover') {
+      setHover(evt.currentTarget.id)
+    } else if (evt.type === 'mouseleave') {
+      setHover(null)
+    }
+  }
   
 
   return (
@@ -34,7 +42,10 @@ const VoteManager = (props: VoteManagerProps): JSX.Element => {
           id={rating.toString()}
           key={rating}
           onClick={handleClick}
-          // src={rating <= profileRating ? bean : noBean}
+          onMouseOver={handleHover}
+          onMouseLeave={handleHover}
+          // will add new logo for the values of the taps
+          // src={rating <= hover ?? profileRating ? bean : noBean}
 					// alt="Bean Symbol"
         />
       ))}
