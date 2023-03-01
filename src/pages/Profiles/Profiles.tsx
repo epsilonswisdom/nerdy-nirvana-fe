@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react'
 
 // services
 import * as profileService from '../../services/profileService'
+import { VoteManagerFormData } from '../../types/forms';
 
 // types
 import { Profile } from '../../types/models'
 
 interface ProfilesProps {
 	profiles: Profile[];
+  handleVote: (FormData: VoteManagerFormData) =>void;
 }
 
 const Profiles = (props: ProfilesProps): JSX.Element => {
