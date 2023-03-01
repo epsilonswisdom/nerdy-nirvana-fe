@@ -1,12 +1,12 @@
 //npm packages
-import { useState } from 'react';
+
 //types
 import { Anime, User } from '../../types/models'
 
 // componenents 
 import AnimeCard from '../../components/Anime/AnimeCard'
 
-import CreateAnime from '../CreateAnime/CreateAnime';
+
 
 //services
 

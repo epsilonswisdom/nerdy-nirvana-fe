@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useLocation } from "react-router";
+import { Anime } from "../../types/models";
 
 import styles from "./CreateAnime.module.css"
 
@@ -14,6 +16,7 @@ interface NewAnimeFormData {
   description: string;
   value: number
 }
+
 
 const CreateAnime: React.FC<CreateAnimeProps> = (props) => {
   const [form, setForm] = useState<NewAnimeFormData>({

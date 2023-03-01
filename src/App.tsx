@@ -51,6 +51,11 @@ function App(): JSX.Element {
     setAnimes(animes.filter(a => a.id !== id))
   }
 
+  const handleUpdateAnime = async (animeData: Anime): Promise<void> => {
+    const UpdateAnime = await animeService.update(animeData)
+    // setAnimes(animes.map((a) => animeData.id === a.id ? UpdateAnime : a))
+  }
+
   useEffect((): void => {
     const fetchProfiles = async (): Promise<void> => {
       try {
@@ -134,6 +139,14 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        {/* <Route
+        path='/animes/:id/update'
+        element={
+          <ProtectedRoute user={user}>
+            <UpdateAnime handleUpdateAnime={handleUpdateAnime} />
+          </ProtectedRoute>
+        }
+        /> */}
         <Route
           path='/animes'
           element={
