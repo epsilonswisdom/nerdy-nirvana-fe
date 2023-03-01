@@ -3,8 +3,8 @@ import React from 'react';
 // adding sound to the voting function fun fun
 import upSound from "../../assets/kingdom-hearts-sound-effects-saveload.mp3"
 import downSound from "../../assets/kingdom-hearts-sound-effects-saveload.mp3"
-import bean from '../../assets/icons/bean.png'
-import noBean from '../../assets/icons/noBean.png'
+import bean from '../../assets/shelter.png'
+import noBean from '../../assets/shelter.png'
 import useSound from 'use-sound';
 
 // types
