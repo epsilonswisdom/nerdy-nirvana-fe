@@ -1,7 +1,10 @@
 // assets
 import React from 'react';
-import bean from '../../assets/icons/bean.png'
-import noBean from '../../assets/icons/noBean.png'
+//adding sound to the voting function fun fun
+//import upPrototype from xxxx
+//import downPrototype from xxxx
+//import bean from '../../assets/icons/bean.png'
+//import noBean from '../../assets/icons/noBean.png'
 
 // types
 import { Profile } from '../../types/models'
@@ -22,6 +25,12 @@ const VoteManager = (props: VoteManagerProps): JSX.Element => {
   let voteSum = 0
   const handleClick = (evt: React.MouseEvent<HTMLImageElement>): void => {
     const newValue = parseInt(evt.currentTarget.id)
+
+    //const[rateUp] = useSound(upprototype, { volume: 0.2})
+    //const[rateDown] = useSound(downprototype, {volume: 0.2})
+
+    //newValue > profileRating ? rateUp() : rateDown()
+    
     handleVote({ value: newValue, profileId: profile.id })
   }
   const [hover, setHover] = useState<string | null>(null)
