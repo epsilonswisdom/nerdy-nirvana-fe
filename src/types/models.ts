@@ -10,6 +10,16 @@ export interface Profile {
   id: number;
   createdAt: string;
   updatedAt: string;
+  votesReceived: {value: number; profileId: number; voterId: number;}[]
+}
+
+export interface Vote {
+  id: number;
+  value: number;
+  profileId: number;
+  voterId: number;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface User {

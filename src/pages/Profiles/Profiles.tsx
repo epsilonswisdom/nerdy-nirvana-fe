@@ -7,7 +7,11 @@ import * as profileService from '../../services/profileService'
 // types
 import { Profile } from '../../types/models'
 
-const Profiles = (): JSX.Element => {
+interface ProfilesProps {
+	profiles: Profile[];
+}
+
+const Profiles = (props: ProfilesProps): JSX.Element => {
   const [profiles, setProfiles] = useState<Profile[]>([])
 
   useEffect((): void => {
