@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 // types
 import { User } from '../../types/models'
+import { Anime } from '../../types/models'
 
 interface NavBarProps {
   user: User | null;

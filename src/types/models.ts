@@ -36,7 +36,8 @@ export interface Anime {
   genre: string;
   description: string;
   value: number;
-  profile: { id: number};
+  profileId: number;
+  id: number;
   createdAt: string;
   updatedAt: string;
 }

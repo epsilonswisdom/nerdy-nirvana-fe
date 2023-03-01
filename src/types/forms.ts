@@ -4,6 +4,14 @@ export interface VoteManagerFormData {
   profileId: number;
 }
 
+export interface AnimeFormData {
+  title: string;
+  genre: string;
+  description: string;
+  value: number;
+  profileId: number;
+}
+
 
 /* ---------===== auth forms =====--------- */
 

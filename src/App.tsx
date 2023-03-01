@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Animes from './pages/Anime/Anime'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -24,7 +25,8 @@ import './App.css'
 
 // types
 import { User, Profile, Anime } from './types/models'
-import { VoteManagerFormData } from './types/forms'
+import { AnimeFormData, VoteManagerFormData } from './types/forms'
+
 
 
 function App(): JSX.Element {
@@ -35,6 +37,17 @@ function App(): JSX.Element {
   const [animes, setAnimes] = useState<Anime[]>([])
 
   const [user, setUser] = useState<User | null>(authService.getUser())
+
+  const handleCreateAnime = async (animeData: AnimeFormData): Promise<void> => {
+    const createAnime = await animeService.create(animeData)
+    setAnimes([createAnime, ...animes])
+    navigate('/animes')
+  }
+
+  const handleDeleteAnime = async (id: number): Promise<void> => {
+    await animeService.deleteAnime(id)
+    setAnimes(animes.filter(a => a.id !== id))
+  }
 
   useEffect((): void => {
     const fetchProfiles = async (): Promise<void> => {
@@ -110,7 +123,14 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
-        
+        <Route
+          path='/animes'
+          element={
+            <ProtectedRoute user={user}>
+              <Animes user={user} animes={animes} handleDeleteAnime={handleDeleteAnime} />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   )

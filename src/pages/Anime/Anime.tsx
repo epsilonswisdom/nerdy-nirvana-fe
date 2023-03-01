@@ -1,32 +1,38 @@
 //npm packages
+//types
+import { Anime, User } from '../../types/models'
 
-
+// componenents 
 import AnimeCard from '../../components/Anime/AnimeCard'
 
 //services
-import * as animeService from '../../services/animeService'
 
-//types
-import { Anime } from '../../types/models'
+
 
 interface AnimeProps {
-  animes: Anime[]
-  //handle Delete functionality will go here 
-  //handleDeleteAnime: (id: number) => Promise<void>
+  animes: Anime[];
+  
+  // handle Delete functionality will go here 
+
+  handleDeleteAnime: (id: number) => Promise<void>,
+  user: User |null
 }
 
 const Animes = (props: AnimeProps): JSX.Element => {
-  const { animes,} = props
+  const { animes, handleDeleteAnime, user} = props
 
   if(!animes.length) return <p>List of Anime</p>
+    
+
 
   return (
-    <>
-    <h1> Hello This is a list of all the Anime</h1>
+    
+    <main className='animeList'>
     {animes.map((anime: Anime) =>
-    <p key={anime.title}>{anime.genre}</p>
+    <AnimeCard key={anime.id} anime ={anime} handleDeleteAnime={handleDeleteAnime} user={user}/>
     )}
-    </>
+    </main>
+    
 
   )
 }
