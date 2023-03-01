@@ -19,7 +19,7 @@ const AnimeCard = (props: AnimeProps): JSX.Element => {
     <article>
       <h1>{anime.title}</h1>
       <h3>{anime.genre}</h3>
-      <datalist>{anime.value}</datalist>
+      <h4>{anime.value}</h4>
       {anime.profileId === user?.id && (
         <>
         <Link to={`/animes/{anime.id}/update`} state={{anime}}>

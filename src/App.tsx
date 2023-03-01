@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Animes from './pages/Anime/Anime'
+import CreateAnime from './pages/CreateAnime/CreateAnime'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -25,7 +26,8 @@ import './App.css'
 
 // types
 import { User, Profile, Anime } from './types/models'
-import { AnimeFormData, VoteManagerFormData } from './types/forms'
+import { VoteManagerFormData, AnimeFormData } from './types/forms'
+// import  {AnimeFormData}  from './types/forms'
 
 
 
@@ -40,7 +42,7 @@ function App(): JSX.Element {
 
   const handleCreateAnime = async (animeData: AnimeFormData): Promise<void> => {
     const createAnime = await animeService.create(animeData)
-    setAnimes([createAnime, ...animes])
+    setAnimes([createAnime, ...animes],)
     navigate('/animes')
   }
 
@@ -94,6 +96,7 @@ function App(): JSX.Element {
     }
     user ? fetchAnimes() : setAnimes([])
   }, [user])
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -120,6 +123,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/new-animes'
+          element={
+            <ProtectedRoute user={user}>
+              <CreateAnime handleCreateAnime={handleCreateAnime} />
             </ProtectedRoute>
           }
         />

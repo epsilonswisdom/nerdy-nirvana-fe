@@ -8,8 +8,6 @@ export interface AnimeFormData {
   title: string;
   genre: string;
   description: string;
-  value: number;
-  profileId: number;
 }
 
 
