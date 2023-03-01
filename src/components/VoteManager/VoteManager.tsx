@@ -6,6 +6,8 @@ import noBean from '../../assets/icons/noBean.png'
 // types
 import { Profile } from '../../types/models'
 import { VoteManagerFormData } from '../../types/forms';
+// npm modules
+import { useState } from 'react'
 
 interface VoteManagerProps {
 	profile: Profile;
@@ -22,6 +24,8 @@ const VoteManager = (props: VoteManagerProps): JSX.Element => {
     const newValue = parseInt(evt.currentTarget.id)
     handleVote({ value: newValue, profileId: profile.id })
   }
+  const [hover, setHover] = useState<string | null>(null)
+  
 
   return (
     <section>
