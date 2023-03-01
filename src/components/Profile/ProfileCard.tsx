@@ -18,7 +18,6 @@ const ProfileCard = (props: ProfileCardProps): JSX.Element => {
   const profilePic = profile.photo ? profile.photo : defaultPic
 
   return (
-    <main className='list'>
     <article>
       <img src={profilePic} alt={`${profile.name}'s avatar`} />
       <h1>{profile.name}</h1>
@@ -26,7 +25,7 @@ const ProfileCard = (props: ProfileCardProps): JSX.Element => {
       <VoteManager { ...props }/>
 
     </article>
-    </main>
+
   )
 }
 

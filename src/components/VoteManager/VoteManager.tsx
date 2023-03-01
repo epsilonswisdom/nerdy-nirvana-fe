@@ -1,10 +1,11 @@
 // assets
 import React from 'react';
-//adding sound to the voting function fun fun
-//import upPrototype from xxxx
-//import downPrototype from xxxx
-//import bean from '../../assets/icons/bean.png'
-//import noBean from '../../assets/icons/noBean.png'
+// adding sound to the voting function fun fun
+import upSound from "../../assets/kingdom-hearts-sound-effects-saveload.mp3"
+import downSound from "../../assets/kingdom-hearts-sound-effects-saveload.mp3"
+import bean from '../../assets/icons/bean.png'
+import noBean from '../../assets/icons/noBean.png'
+import useSound from 'use-sound';
 
 // types
 import { Profile } from '../../types/models'
@@ -23,13 +24,19 @@ const VoteManager = (props: VoteManagerProps): JSX.Element => {
   const ratingOptions: [ 1, 2, 3, 4, 5 ] = [ 1, 2, 3, 4, 5 ]
   profile.votesReceived.forEach(vote => voteSum += vote.value)
   let voteSum = 0
+  
+  const voteCount = profile.votesReceived.length
+  
+  const profileRating = voteCount ? voteSum / voteCount : 1
+  
+  
   const handleClick = (evt: React.MouseEvent<HTMLImageElement>): void => {
     const newValue = parseInt(evt.currentTarget.id)
 
-    //const[rateUp] = useSound(upprototype, { volume: 0.2})
-    //const[rateDown] = useSound(downprototype, {volume: 0.2})
+    const[rateUp] = useSound(upSound, { volume: 0.2})
+    const[rateDown] = useSound(downSound, {volume: 0.2})
 
-    //newValue > profileRating ? rateUp() : rateDown()
+    newValue > profileRating ? rateUp() : rateDown()
     
     handleVote({ value: newValue, profileId: profile.id })
   }
@@ -53,9 +60,9 @@ const VoteManager = (props: VoteManagerProps): JSX.Element => {
           onClick={handleClick}
           onMouseOver={handleHover}
           onMouseLeave={handleHover}
+          src={rating <= (hover ?? profileRating) ? bean : noBean}
+					alt="Bean Symbol"
           // will add new logo for the values of the taps
-          // src={rating <= hover ?? profileRating ? bean : noBean}
-					// alt="Bean Symbol"
         />
       ))}
     </section>

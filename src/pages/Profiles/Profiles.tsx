@@ -7,6 +7,7 @@ import * as profileService from '../../services/profileService'
 // types
 import { Profile } from '../../types/models'
 import { VoteManagerFormData } from '../../types/forms';
+import ProfileCard from '../../components/Profile/ProfileCard';
 
 interface ProfilesProps {
 	profiles: Profile[];
@@ -32,12 +33,18 @@ const Profiles = (props: ProfilesProps): JSX.Element => {
 
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map((profile: Profile) =>
-        <p key={profile.id}>{profile.name}</p>
-      )}
+return (
+  <main className='list'>
+    {props.profiles.map((profile: Profile) =>
+      <ProfileCard
+        key={profile.id.toString()}
+        profile={profile}
+        handleVote={props.handleVote}
+      />
+    )}
+  </main>
+)
     </>
   )
 }
- 
 export default Profiles
