@@ -37,16 +37,15 @@ async function create(formData: AnimeFormData ): Promise<Anime> {
 
 async function deleteAnime(id: number): Promise<void> {
   try {
-    await fetch(`{$BASE_URL/${id}/delete`, {
+    const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`,
-
-      },
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
     })
-
+    return res.json()
   } catch (error) {
-    throw error 
+    throw error
   }
 }
 
