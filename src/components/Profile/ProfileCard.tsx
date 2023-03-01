@@ -1,6 +1,6 @@
 // assets
-import defaultPic from '../../assets/icons/profile.png'
-
+import defaultPic from '../../assets/profile.png'
+import styles from '../Profile/ProfileCard.module.css'
 // types
 import { Profile } from '../../types/models'
 import { VoteManagerFormData } from '../../types/forms';
