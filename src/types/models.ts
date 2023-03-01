@@ -10,7 +10,7 @@ export interface Profile {
   id: number;
   createdAt: string;
   updatedAt: string;
-  votesReceived: {value: number; profileId: number; voterId: number;}[]
+  votesReceived: Vote[]
 }
 
 export interface Vote {
