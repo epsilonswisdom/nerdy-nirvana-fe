@@ -5,7 +5,7 @@ I wanted to create an app, an open space where everyone can share their hobbies(
 I'm always fascinated by everyone whom share their interests and just offload an insane amount of information.
 Share, Share, Share we live in the Information Age.
 
-## Click Here: [https://63fd444c8ae9c419497d5e57--nerdy-nirvana.netlify.app/]
+## Click Here: [https://nerdy-nirvana.netlify.app/login]
 
 ## Technologies Used
 * React
