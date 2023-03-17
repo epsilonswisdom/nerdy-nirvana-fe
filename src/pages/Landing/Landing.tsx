@@ -19,7 +19,8 @@ const Landing = ({ user, handleLogout }: LandingProps): JSX.Element => {
 
   return (
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+      <h1>Hello, {user ? user.name : 'Users'}</h1>
+      <h2>Welcome</h2>
       { user &&
       <button onClick={handleDeleteAccount}>Delete Account!!</button>}
     </main>

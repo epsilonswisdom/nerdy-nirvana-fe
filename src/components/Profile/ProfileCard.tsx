@@ -1,6 +1,6 @@
 // assets
 import defaultPic from '../../assets/profile.png'
-import styles from '../Profile/ProfileCard.module.css'
+import styles from './ProfileCard.module.css'
 // types
 import { Profile } from '../../types/models'
 import { VoteManagerFormData } from '../../types/forms';
@@ -18,7 +18,7 @@ const ProfileCard = (props: ProfileCardProps): JSX.Element => {
   const profilePic = profile.photo ? profile.photo : defaultPic
 
   return (
-    <article>
+    <article className={styles.article}>
       <img src={profilePic} alt={`${profile.name}'s avatar`} />
       <h1>{profile.name}</h1>
 

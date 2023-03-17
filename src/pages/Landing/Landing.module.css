@@ -3,3 +3,14 @@
   align-items: center;
   flex-direction: column;
 }
+
+h1 {
+  display: flex;
+  font: 500;
+  font-style: italic;
+}
+
+h2 {
+  display: flex;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

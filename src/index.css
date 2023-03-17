@@ -9,12 +9,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: sofia-pro, sans-serif;
-  --primary: #F2B138;
-  --secondary: #6574d0;
-  --outline: #ffffff;
-  --background: #f2f4f8;
-  --border: rgb(220, 220, 220);
-  --card-background: rgb(255, 255, 255);
+  --primary: #25fd09;
+  --secondary: #0768e7;
+  --outline: #06a4ec;
+  --background: #0804f0;
+  --border: rgb(26, 2, 245);
+  --card-background: rgba(1, 18, 175, 0.308);
 }
 
 main {
@@ -65,7 +65,7 @@ p {
 }
 
 a {
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   text-decoration: none;
 }
@@ -160,8 +160,8 @@ nav {
   position: fixed;
   padding: 12px 20px;
   align-items: center;
-  background: white;
-  border-bottom: 1px solid rgb(200, 200, 200);
+  background: rgb(4, 152, 238);
+  border-bottom: 1px solid rgb(237, 4, 245);
 }
 
 nav img {
